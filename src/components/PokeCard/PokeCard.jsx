@@ -40,8 +40,6 @@ export const PokeCard = (props) => (
                     </div>
                 </div>
 
-                <div className="poke-card-body-details-separator"></div>
-
                 <div className="poke-card-body-details-content">
                     <div className="poke-card-body-details-content-data">
                         <img className="poke-card-body-details-content-data-img" src={height} alt="height-icon"/>

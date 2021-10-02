@@ -29,8 +29,9 @@
     position: absolute;
     bottom: 5px;
     left: 5px;
-    width: calc(100% - 10px);
-    height: 240px;
+    right: 5px;
+    height: calc(100% - 160px);
+    /*height: 240px;*/
     background-color: white;
     border-radius: 12px;
 }
@@ -64,7 +65,7 @@
     font-weight: 700;
 }
 
-.poke-card-body-types .poke-card-body-type-badge:last-child {
+.poke-card-body-type-badge:last-child {
     margin-right: 0 !important;
 }
 
@@ -82,6 +83,16 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 16px;
+}
+
+
+.poke-card-body-details-content {
+    padding: 0 24px;
+    border-right: 1px solid #E0E0E0;
+}
+
+.poke-card-body-details-content:last-child {
+    border-right: none;
 }
 
 .poke-card-body-details-content-data {
@@ -103,13 +114,6 @@
     font-size: 8px;
     line-height: 12px;
     color: #666666
-}
-
-.poke-card-body-details-separator {
-    height: 48px;
-    width: 1px;
-    background-color: #E0E0E0;
-    margin: 0 24px;
 }
 
 .poke-card-body-description {
