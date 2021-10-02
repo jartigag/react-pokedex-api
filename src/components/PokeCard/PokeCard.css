@@ -1,0 +1,122 @@
+.poke-card {
+    position: relative;
+    flex-shrink: 0;
+    width: 300px;
+    height: 400px;
+    margin-bottom: 24px;
+    margin-right: 24px;
+    border-radius: 12px;
+}
+
+.poke-card-header {
+    display: flex;
+    align-items: center;
+    padding: 24px 24px 0px 24px;
+    color: white;
+    font-weight: 700;
+}
+
+.poke-card-header-name {
+    font-size: 24px;
+    margin-right: auto;
+}
+
+.poke-card-header-code {
+    font-size: 12px;
+}
+
+.poke-card-body {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: calc(100% - 10px);
+    height: 240px;
+    background-color: white;
+    border-radius: 12px;
+}
+
+.poke-card-body-pokemon-img {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 150px;
+    width: 150px;
+    bottom: calc(100% - 49px);
+}
+
+.poke-card-body-types {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+.poke-card-body-type-badge {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    margin-right: 16px;
+    padding: 0 10px;
+    border-radius: 100px;
+    color: white;
+    font-size: 10px;
+    line-height: 16px;
+    font-weight: 700;
+}
+
+.poke-card-body-types .poke-card-body-type-badge:last-child {
+    margin-right: 0 !important;
+}
+
+.poke-card-body-about {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+}
+
+.poke-card-body-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.poke-card-body-details-content-data {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.poke-card-body-details-content-data-img {
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+}
+
+.poke-card-body-details-content-title {
+    text-align: center;
+    font-size: 8px;
+    line-height: 12px;
+    color: #666666
+}
+
+.poke-card-body-details-separator {
+    height: 48px;
+    width: 1px;
+    background-color: #E0E0E0;
+    margin: 0 24px;
+}
+
+.poke-card-body-description {
+    height: 48px;
+    overflow-y: auto;
+    padding: 0 20px;
+    text-align: justify;
+    font-size: 10px;
+    line-height: 16px;
+}
