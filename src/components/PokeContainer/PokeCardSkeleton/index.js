@@ -1,0 +1,1 @@
+export { PokeCardSkeleton } from './PokeCardSkeleton'

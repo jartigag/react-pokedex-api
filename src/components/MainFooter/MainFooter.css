@@ -1,0 +1,20 @@
+footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 63px;
+    margin-top: 34px;
+    padding: 0 10px;
+    border-top: 1px solid #E0E0E0;
+}
+
+.footer-img-github {
+    height: 32px;
+    margin-right: 10px;
+}
+
+.footer-img-logo {
+    height: 42px;
+    border-left: 1px solid #E0E0E0;
+}

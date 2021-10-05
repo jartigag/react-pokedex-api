@@ -1,0 +1,127 @@
+.poke-card-skeleton {
+    position: relative;
+    flex-shrink: 0;
+    width: 300px;
+    height: 400px;
+    margin: 0 12px 24px 12px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    background: #E0E0E0;
+}
+
+.poke-card-skeleton-header {
+    display: flex;
+    align-items: center;
+    padding: 24px 24px 0px 24px;
+}
+
+.poke-card-skeleton-header-name {
+    width: 150px;
+    height: 32px;
+    margin-right: auto;
+    background: white;
+    border-radius: 100px;
+}
+
+.poke-card-skeleton-header-code {
+    width: 50px;
+    height: 24px;
+    background: white;
+    border-radius: 100px;
+}
+
+.poke-card-skeleton-body {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    height: calc(100% - 160px);
+    /*height: 240px;*/
+    background-color: transparent;
+    border-radius: 12px;
+}
+
+.poke-card-skeleton-body-pokemon-img {
+    position: absolute;
+    bottom: calc(100% - 30px);
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 100px;
+    width: 100px;
+    background: white;
+    border-radius: 100px;
+}
+
+.poke-card-skeleton-body-types {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+.poke-card-skeleton-body-type-badge {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 50px;
+    margin-right: 16px;
+    padding: 0 10px;
+    border-radius: 100px;
+    background: white;
+}
+
+.poke-card-skeleton-body-type-badge:last-child {
+    margin-right: 0;
+}
+
+.poke-card-skeleton-body-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+.poke-card-skeleton-body-details-content {
+    height: 50px;
+    width: 180px;
+    background: white;
+    border-radius: 100px;
+}
+
+.poke-card-skeleton-body-details-content:last-child {
+    border-right: none;
+}
+
+.poke-card-skeleton-body-details-content-data {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.poke-card-skeleton-body-details-content-data-img {
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+}
+
+.poke-card-skeleton-body-details-content-title {
+    text-align: center;
+    font-size: 8px;
+    line-height: 12px;
+    color: #666666
+}
+
+.poke-card-skeleton-body-description {
+    height: 48px;
+    overflow: hidden;
+    padding: 0 20px;
+    text-align: justify;
+    font-size: 10px;
+    line-height: 16px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}

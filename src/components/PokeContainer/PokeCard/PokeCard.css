@@ -3,9 +3,9 @@
     flex-shrink: 0;
     width: 300px;
     height: 400px;
-    margin-bottom: 24px;
-    margin-right: 24px;
+    margin: 0 12px 24px 12px;
     border-radius: 12px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .poke-card-header {
@@ -17,8 +17,9 @@
 }
 
 .poke-card-header-name {
-    font-size: 24px;
     margin-right: auto;
+    font-size: 24px;
+    text-transform: capitalize;
 }
 
 .poke-card-header-code {
@@ -38,11 +39,11 @@
 
 .poke-card-body-pokemon-img {
     position: absolute;
+    bottom: calc(100% - 49px);
     left: 50%;
     transform: translate(-50%, 0);
-    height: 150px;
-    width: 150px;
-    bottom: calc(100% - 49px);
+    height: 140px;
+    max-width: 250px;
 }
 
 .poke-card-body-types {
@@ -63,10 +64,11 @@
     font-size: 10px;
     line-height: 16px;
     font-weight: 700;
+    text-transform: capitalize;
 }
 
 .poke-card-body-type-badge:last-child {
-    margin-right: 0 !important;
+    margin-right: 0;
 }
 
 .poke-card-body-about {
@@ -84,7 +86,6 @@
     justify-content: center;
     margin-bottom: 16px;
 }
-
 
 .poke-card-body-details-content {
     padding: 0 24px;
@@ -118,9 +119,13 @@
 
 .poke-card-body-description {
     height: 48px;
-    overflow-y: auto;
+    overflow: hidden;
     padding: 0 20px;
     text-align: justify;
     font-size: 10px;
     line-height: 16px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }

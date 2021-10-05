@@ -1,32 +1,30 @@
-import weight from './../../assets/img/icons/weight.svg'
-import height from './../../assets/img/icons/height.svg'
+import weight from './../../../assets/img/icons/weight.svg'
+import height from './../../../assets/img/icons/height.svg'
 
 import './PokeCard.css';
 
-const imgUrl = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'
-
 export const PokeCard = (props) => (
-    <div className="poke-card" style={{ backgroundColor: props.pokemon.types[0].color }}>
+    <div className={`poke-card background-${props.pokemon.types[0]}`}>
         <div className="poke-card-header">
             <div className="poke-card-header-name">
                 { props.pokemon.name }
             </div>
             <div className="poke-card-header-code">
-                #{ props.pokemon.code }
+                #{ props.pokemon.id }
             </div>
         </div>
         <div className="poke-card-body">
-            <img className="poke-card-body-pokemon-img" src={ `${imgUrl}${props.pokemon.code}.png` } alt="pokemon"/>
+            <img className="poke-card-body-pokemon-img" src={props.pokemon.img} alt="pokemon"/>
             <div className="poke-card-body-types">
                 {
                     props.pokemon.types.map(type => (
-                        <span className="poke-card-body-type-badge"  style={{ background: type.color }}> 
-                            { type.name } 
+                        <span className={`poke-card-body-type-badge background-${type}`}> 
+                            { type } 
                         </span>
                     ))
                 }
             </div>
-            <div className="poke-card-body-about" style={{ color: props.pokemon.types[0].color }}>
+            <div className={`poke-card-body-about color-${props.pokemon.types[0]}`}>
                 About
             </div>
             <div className="poke-card-body-details">
