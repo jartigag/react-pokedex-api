@@ -114,14 +114,9 @@
 }
 
 .poke-card-skeleton-body-description {
-    height: 48px;
-    overflow: hidden;
-    padding: 0 20px;
-    text-align: justify;
-    font-size: 10px;
-    line-height: 16px;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+    height: 60px;
+    margin: 0 auto;
+    width: 90%;
+    background: white;
+    border-radius: 20px;
 }

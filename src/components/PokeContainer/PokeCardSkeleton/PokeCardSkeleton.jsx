@@ -18,9 +18,7 @@ export const PokeCardSkeleton = () => (
             <div className="poke-card-skeleton-body-details">
                 <div className="poke-card-skeleton-body-details-content"></div>
             </div>
-            <div className="poke-card-skeleton-body-description">
-                Description
-            </div>
+            <div className="poke-card-skeleton-body-description"></div>
         </div>
     </div>
 )
