@@ -1,4 +1,28 @@
 import { apiService } from './../ApiService'
+import { cacheService } from './../CacheService'
+
+const pokemonGenerations = {
+    1: {
+      limit: 151,
+      offset: 0
+    },
+    2: {
+      limit: 100,
+      offset: 151
+    },
+    3: {
+      limit: 135,
+      offset: 251
+    },
+    4: {
+      limit: 107,
+      offset: 386
+    },
+    5: {
+      limit: 156,
+      offset: 493
+    }
+}
 
 export const pokemonService = {
     list: async () => {
@@ -6,15 +30,22 @@ export const pokemonService = {
         return response.results;
     },
 
-    listDetailed: async () => {
-        const response = await apiService.get('https://pokeapi.co/api/v2/pokemon?limit=151')
-        const pokemon_list = response.results
+    listByGenerationDetailed: async (generation) => {
+        generation = generation ?? 1
 
-        const pokemon_list_detailed = await Promise.all(
-            pokemon_list.map(rp => apiService.get(rp.url))
+        const cacheKey = `listByGenerationDetailed-${generation}`
+
+        const cacheResult = cacheService.get(cacheKey)
+        if (cacheResult) return cacheResult
+
+        const response = await apiService.get(`https://pokeapi.co/api/v2/pokemon?limit=${pokemonGenerations[generation].limit}&offset=${pokemonGenerations[generation].offset}`)
+        const pokemonList = response.results
+
+        const pokemonListDetailed = await Promise.all(
+            pokemonList.map(rp => apiService.get(rp.url))
         )
 
-        return pokemon_list_detailed.map(p => (
+        const pokemonMapped = pokemonListDetailed.map(p => (
             {
                 id: p['id'],
                 name: p['name'],
@@ -26,5 +57,12 @@ export const pokemonService = {
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet facilisis mi. Integer eget urna eu mauris scelerisque ornare. Nam at finibus purus. Nam quis mauris elementum, ullamcorper sem non, convallis mi. Sed a bibendum sapien, non posuere ligula. Morbi sit amet maximus purus. Nulla eu pulvinar ante. Nulla gravida luctus convallis. Duis suscipit vel nisi et tincidunt. Aenean velit purus, rutrum euismod justo id, porta tincidunt orci. Curabitur quis nibh elit. Etiam ornare tortor ac nibh commodo dapibus. Proin vehicula erat sit amet lacus posuere tincidunt.'
             }
         ))
+
+        cacheService.set({
+            key: cacheKey,
+            value: pokemonMapped
+        })
+
+        return pokemonMapped;
     }
 }

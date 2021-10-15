@@ -20,7 +20,7 @@ export const PokeContainer = (props) => {
         dispatch({
             type: 'IS_LOADING_POKEMONS'
         })
-        pokemonService.listAll().then(
+        pokemonService.listByGenerationDetailed(props.generation).then(
           pokemons => {
             dispatch({
               type: 'LOADING_POKEMONS_SUCCESS',
@@ -32,7 +32,7 @@ export const PokeContainer = (props) => {
                 data: error
             })
           });
-    }, [])
+    }, [props.generation])
 
     return (
         <div className="poke-container">

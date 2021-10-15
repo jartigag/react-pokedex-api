@@ -11,6 +11,7 @@ import { MainFooter } from './components/MainFooter'
 
 function App() {
   const [inputText, setInputText] = useState('')
+  const [generation, setGeneration] = useState(null)
 
   return (
     <>
@@ -20,10 +21,13 @@ function App() {
         onSearch={e => {
           setInputText(e.target.value)
         }}
+        onSelect={e => {
+          setGeneration(e.target.value)
+        }}
       ></Search>
-      <PokeContainer inputText={inputText}></PokeContainer>
+      <PokeContainer inputText={inputText} generation={generation}></PokeContainer>
       <MainFooter></MainFooter>
-    </>  
+    </>
   );
 }
 
